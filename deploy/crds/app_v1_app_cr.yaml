@@ -1,0 +1,23 @@
+apiVersion: app.example.com/v1
+kind: App
+metadata:
+  name: example-app
+spec:
+  # Add fields here
+  replicas: 2
+  image: nginx
+  ports:
+  - targetPort: 80
+    port: 8080
+  Envs: 
+  - name: DEMO
+    value: app
+  - name: GOPATH
+    value: gopath
+  resources:
+    limits:
+      cpu: 100m
+      memory: 100M
+    requests:
+      cpu: 100m
+      memory: 100M
